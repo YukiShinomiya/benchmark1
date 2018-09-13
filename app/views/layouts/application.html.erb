@@ -10,6 +10,34 @@
   </head>
 
   <body>
+    <header>
+    <div class="header-logo">
+      <%= link_to("Benchmark","/") %>
+    </div>
+    <u1 class="header-menus">
+     <% if @current_user %>
+      <li>
+        <%= @current_user.name %>
+      </li>
+      <li>
+        <%= link_to("ログアウト", "/users/logout", {method: "post"}) %>
+      </li>
+     <% else %>
+     <li>
+       <%= link_to("新規登録", "/users/new") %>
+     </li>
+     <li>
+       <%= link_to("ログイン", "/users/login") %>
+     </li>
+    </u1>
+    </header>
+    <% end %>
+
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
