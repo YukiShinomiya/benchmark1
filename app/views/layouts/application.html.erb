@@ -20,7 +20,7 @@
         <%= @current_user.name %>
       </li>
       <li>
-        <%= link_to("ログアウト", "/users/logout", {method: "post"}) %>
+        <%= link_to("ログアウト", "/users/logout", {method: :post}) %>
       </li>
      <% else %>
      <li>
